@@ -28,17 +28,17 @@ To ensure code can be re-run, use the following drop statements before the schem
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS subcategory;
 DROP TABLE IF EXISTS contacts;
-DROP TABLE IF EXISTS Compaign;
+DROP TABLE IF EXISTS campaign;
 Execute the entire script to create the tables.
 
 2. Import the Data
-   After executing the schema, import the CSV data into the database tables in the following order:
+   After executing the schema, import the CSV data in the output folder into the database tables in the following order:
 
 category
 subcategory
 contacts
 campaign
-You can import the data using the Import/Export feature in PGAdmin.
+You can import the data using the Import/Export features in PGAdmin.
 
 3. Run SELECT Statements
    Open a new query and run the following SELECT statements to ensure the tables function properly:
