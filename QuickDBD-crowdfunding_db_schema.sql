@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS subcategory;
 DROP TABLE IF EXISTS contacts;
-DROP TABLE IF EXISTS Compaign;
+DROP TABLE IF EXISTS campaign;
 
 
 CREATE TABLE "category" (
@@ -31,13 +31,13 @@ CREATE TABLE "contacts" (
     "contact_id" int   NOT NULL,
     "first_name" varchar(50)   NOT NULL,
     "last_name" varchar(50)   NOT NULL,
-    "email" varchar(40)   NOT NULL,
+    "email" varchar(100)   NOT NULL,
     CONSTRAINT "pk_contacts" PRIMARY KEY (
         "contact_id"
      )
 );
 
-CREATE TABLE "Compaign" (
+CREATE TABLE "campaign" (
     "cf_id" int   NOT NULL,
     "contact_id" int   NOT NULL,
     "company_name" varchar(100)  NOT NULL,
@@ -52,17 +52,17 @@ CREATE TABLE "Compaign" (
     "end_date" date   NOT NULL,
     "category_id" Varchar(50)   NOT NULL,
     "subcategory_id" varchar(50)   NOT NULL,
-    CONSTRAINT "pk_Compaign" PRIMARY KEY (
+    CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
 );
 
 ALTER TABLE "category" ADD CONSTRAINT "fk_category_category_id" FOREIGN KEY("category_id")
-REFERENCES "Compaign" ("category_id");
+REFERENCES "campaign" ("category_id");
 
 ALTER TABLE "subcategory" ADD CONSTRAINT "fk_subcategory_subcategory_id" FOREIGN KEY("subcategory_id")
-REFERENCES "Compaign" ("subcategory_id");
+REFERENCES "campaign" ("subcategory_id");
 
 ALTER TABLE "contacts" ADD CONSTRAINT "fk_contacts_contact_id" FOREIGN KEY("contact_id")
-REFERENCES "Compaign" ("contact_id");
+REFERENCES "campaign" ("contact_id");
 
