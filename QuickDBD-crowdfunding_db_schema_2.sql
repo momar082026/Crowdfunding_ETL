@@ -42,8 +42,8 @@ SELECT * FROM contacts;
 CREATE TABLE "campaign" (
     "cf_id" int   NOT NULL,
     "contact_id" int   NOT NULL,
-    "company_name" varchar(100),   NOT NULL,
-    "description" varchar(100),   NOT NULL,
+    "company_name" varchar(100)   NOT NULL,
+    "description" varchar(100)   NOT NULL,
     "goal" float   NOT NULL,
     "pledged" float   NOT NULL,
     "outcome" varchar(50)   NOT NULL,
